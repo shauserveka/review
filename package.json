@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/shauserveka/review/issues"
   },
-  "homepage": "https://github.com/shauserveka/review/readme"
+  "homepage": "https://github.com/shauserveka/review/readme",
+  "dependencies": {
+    "webpack": "^5.75.0"
+  }
 }
