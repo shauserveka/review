@@ -1,0 +1,19 @@
+{
+  "name": "review",
+  "version": "1.0.0",
+  "description": "my link",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shauserveka/review.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shauserveka/review/issues"
+  },
+  "homepage": "https://github.com/shauserveka/review/readme"
+}
